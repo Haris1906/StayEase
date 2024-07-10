@@ -32,7 +32,7 @@ function App() {
       <ReactQueryDevtools initialIsOpen={false} />
       <GlobalStyles />
       <BrowserRouter>
-        <Routes>
+        <Routes basename="/tothepoint_login">
           <Route
             element={
               <ProtectedRoute>
