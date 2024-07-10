@@ -8,7 +8,6 @@ import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
-import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
@@ -20,7 +19,6 @@ import Signup from "./pages/Signup";
 import AppRoot from "./ui/AppRoot";
 
 import UserAppLayout from "./ui/UserAppLayout";
-import Spinner from "./ui/Spinner";
 import { useRole } from "./context/RoleContext";
 import Home from "./pages/Home";
 import GiveRating from "./features/ratings/GiveRating";
@@ -66,7 +64,7 @@ function App() {
                 <Route path="bookings/:bookingId" element={<Booking />} />
               </Route>
             )}
-            <Route path="*" element={role ? <PageNotFound /> : <Spinner />} />
+            <Route path="*" element={<Navigate replace to="/" />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
