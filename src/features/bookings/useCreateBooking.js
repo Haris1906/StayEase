@@ -25,7 +25,7 @@ export function useCreateBooking() {
       });
       setTimeout(() => {
         queryClient.invalidateQueries({ queryKey: ["cabins"] });
-      }, 700);
+      }, 1500);
       queryClient.invalidateQueries({ queryKey: ["bookingbyUser"] });
     },
     onError: (err) => toast.error(err.message),
