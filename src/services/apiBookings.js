@@ -91,9 +91,11 @@ export async function getStaysTodayActivity() {
     .from("bookings")
     .select("*, guests(fullName, nationality, countryFlag)")
     .or(
-      `and(status.eq.unconfirmed,startDate.eq.${getToday()}),and(status.eq.checked-in,endDate.eq.${getToday()})`
+      `and(status.eq.checked-in,and(startDate.gte.${getToday()},startDate.lte.${getToday(
+        { end: "end" }
+      )}))`
     )
-    .order("created_at");
+    .order("endDate", { ascending: true });
 
   // Equivalent to this. But by querying this, we only download the data we actually need, otherwise we would need ALL bookings ever created
   // (stay.status === 'unconfirmed' && isToday(new Date(stay.startDate))) ||
