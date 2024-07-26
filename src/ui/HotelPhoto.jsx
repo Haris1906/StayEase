@@ -5,14 +5,14 @@ const Div = styled.div`
   position: relative;
   display: flex;
   height: 30rem;
-  width: 50rem;
+  width: 100%;
   overflow: hidden;
   border-radius: 1rem;
 `;
 const Img = styled.img`
   position: absolute;
-  width: 50rem;
-  height: 32rem;
+  width: 100%;
+  height: 30rem;
   border-radius: 1rem;
   object-fit: cover;
   box-shadow: 0 0 1rem var(--color-grey-400);
@@ -28,7 +28,7 @@ export default function HotelPhoto() {
   console.log(setIndex);
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setIndex((index) => (index + 1) % 5);
+      setIndex((index) => (index + 1) % 4);
     }, 5000);
 
     return () => clearInterval(intervalId);
@@ -36,15 +36,13 @@ export default function HotelPhoto() {
 
   return (
     <Div>
-      <Img value={0 - index} src={`/photo-${0}.jpg`} alt="logo" />
+      <Img value={0 - index} src={`/photo-${0}.png`} alt="logo" />
 
-      <Img value={1 - index} src={`/photo-${1}.jpg`} alt="logo" />
+      <Img value={1 - index} src={`/photo-${1}.png`} alt="logo" />
 
-      <Img value={2 - index} src={`/photo-${2}.jpg`} alt="logo" />
+      <Img value={2 - index} src={`/photo-${2}.png`} alt="logo" />
 
-      <Img value={3 - index} src={`/photo-${3}.jpg`} alt="logo" />
-
-      <Img value={4 - index} src={`/photo-${4}.jpg`} alt="logo" />
+      <Img value={3 - index} src={`/photo-${3}.png`} alt="logo" />
     </Div>
   );
 }

@@ -4,7 +4,7 @@ import HotelDescription from "./HotelDescription";
 
 const StyledDiv = styled.div`
   display: grid;
-  grid-template-columns: 1fr 0.7fr;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
   height: 32rem;
@@ -13,6 +13,7 @@ const StyledDiv = styled.div`
   padding-left: 2rem;
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
+  gap: 2rem;
 `;
 export default function About() {
   return (
